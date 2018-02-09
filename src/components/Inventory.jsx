@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Sell from './Sell';
 
 function Inventory(props) {
 
@@ -10,6 +11,7 @@ function Inventory(props) {
       <p className='full-width'>Price: {props.price}</p>
       <p className='full-width'>Farm: {props.farm}</p>
       <p className='full-width'>Energy Level: {props.energy}</p>
+      <Sell />
       <style jsx>{`
         .inventory-container {
           display: flex;
@@ -20,7 +22,7 @@ function Inventory(props) {
           box-shadow: 2px 2px 5px grey;
           width: 400px;
           height: 300px;
-          margin-top: 2vh;
+          margin-bottom: 4vh;
           flex-direction: column;
         }
         .full-wdith {
@@ -36,10 +38,10 @@ function Inventory(props) {
 }
 
 Inventory.propTypes = {
-  name: PropTypes.string.IsRequired,
-  price: PropTypes.number.IsRequired,
-  farm: PropTypes.string.IsRequired,
-  energy: PropTypes.number.IsRequired,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  farm: PropTypes.string,
+  energy: PropTypes.number,
   image: PropTypes.any
 };
 
