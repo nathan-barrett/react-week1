@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Inventory from './Inventory';
 import INVENTORY from './InventoryData';
-import Sell from './Sell';
 
 
 const InventoryList = () => {
@@ -28,6 +27,7 @@ const InventoryList = () => {
             farm={inventory.farm}
             energy={inventory.energy}
             image={inventory.image}
+            button={<span key={i} className='button'>Buy</span>}
             key={i}
           />
         )}

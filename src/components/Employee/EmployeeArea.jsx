@@ -3,14 +3,17 @@ import INVENTORY from '../InventoryData';
 import Inventory from '../Inventory';
 
 const EmployeeArea = () => {
-  const formStyle = {
-
+  const flexStyle = {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignContent: 'center',
+    flexWrap: 'wrap',
   };
   return (
     <div>
       <h1>Pierre's Employee Area</h1>
       <h2>Restock!</h2>
-      <form style={formStyle}>
+      <form>
         <input type='text'
           id='name'
           placeholder='Item Name'/>
@@ -31,9 +34,8 @@ const EmployeeArea = () => {
       <div className="edit-form">
         <h1>Edit a Product!</h1>
         <p>Please select an Product to be Edited</p>
-        <hr> </hr>
       </div>
-      <div>
+      <div style={flexStyle}>
         {INVENTORY.map((inventory, i) =>
           <Inventory
             name={inventory.name}
@@ -41,6 +43,7 @@ const EmployeeArea = () => {
             farm={inventory.farm}
             energy={inventory.energy}
             image={inventory.image}
+            button={<span key={i} className='button'>Edit</span>}
             key={i} />
         )}
       </div>

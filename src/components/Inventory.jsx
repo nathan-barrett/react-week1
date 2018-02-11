@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Sell from './Sell';
 
 function Inventory(props) {
 
@@ -11,7 +10,7 @@ function Inventory(props) {
       <p className='full-width'>Price: {props.price}</p>
       <p className='full-width'>Farm: {props.farm}</p>
       <p className='full-width'>Energy Level: {props.energy}</p>
-      <Sell />
+      <button className='button'>{props.button}</button>
       <style jsx>{`
         .inventory-container {
           display: flex;
@@ -42,7 +41,8 @@ Inventory.propTypes = {
   price: PropTypes.number,
   farm: PropTypes.string,
   energy: PropTypes.number,
-  image: PropTypes.any
+  image: PropTypes.any,
+  button: PropTypes.any
 };
 
 export default Inventory;
