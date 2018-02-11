@@ -3,14 +3,14 @@ import React from 'react';
 const Sell = () => {
   return (
     <div>
-      <button className="sell-button">Buy!</button>
+      <button className="button">Buy!</button>
       <style jsx>{`
-        .sell-button:hover {
+        .button:hover {
           color: #fff;
           background-color: #c82333;
           border-color: #bd2130;
         }
-        .sell-button {
+        .button {
           color: #fff;
           background-color: #dc3545;
           border-color: #dc3545;
