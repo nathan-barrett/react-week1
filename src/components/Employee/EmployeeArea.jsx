@@ -1,52 +1,14 @@
 import React from 'react';
-import INVENTORY from '../InventoryData';
-import Inventory from '../Inventory';
+import Add from './Add';
+import Edit from './Edit';
 
 const EmployeeArea = () => {
-  const flexStyle = {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignContent: 'center',
-    flexWrap: 'wrap',
-  };
   return (
     <div>
       <h1>Pierre's Employee Area</h1>
       <h2>Restock!</h2>
-      <form>
-        <input type='text'
-          id='name'
-          placeholder='Item Name'/>
-        <input type='number'
-          id='price'
-          placeholder='What is the price?'/>
-        <input type='text'
-          id='farm'
-          placeholder='What Farm is this From?'/>
-        <input type='number'
-          id='energy'
-          placeholder='Energy Level'/>
-        <input type=''
-          id='pic'
-          placeholder='Picture URL'/>
-        <button type='submit'>Add Item</button>
-      </form>
-      <div className="edit-form">
-        <h1>Edit a Product!</h1>
-        <p>Please select an Product to be Edited</p>
-      </div>
-      <div style={flexStyle}>
-        {INVENTORY.map((inventory, i) =>
-          <Inventory
-            name={inventory.name}
-            price={inventory.price}
-            farm={inventory.farm}
-            energy={inventory.energy}
-            image={inventory.image}
-            button={<span key={i} className='button'>Edit</span>}
-            key={i} />
-        )}
-      </div>
+      <Add />
+      <Edit />
     </div>
   );
 };
