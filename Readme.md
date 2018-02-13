@@ -40,4 +40,7 @@ $ npm run start
 Open the local server host in your desired browser (I recommend Google Chrome)
 
 ## Notes:
-N/A
+
+I didn't have a ton of problems setting up the build environment, but I did have some confusion about setting up web-pack, and not knowing exactly what everything was doing, I know that things work in this specific environment but I don't think I would know how to set things up if things were any different. Not sure though!
+
+Also, I found that the Angular component set up was a little more black and white than the component structure in React. It seemed a little confusing to me to as to when to separate components and when not to. I tried to separate the different buttons into different components, but with the structure the way it was, i needed to pass the buttons as props.
