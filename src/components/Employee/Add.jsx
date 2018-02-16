@@ -11,7 +11,7 @@ const Add = (props) => {
 
   function handleNewProductAdd(event) {
     event.preventDefault();
-    props.onAddNew({name: _name.value, price: parseInt(_price.value), farm: _farm.value, energy: parseInt(_energy.value), pic: _pic.value });
+    props.onAddNew({name: _name.value, price: parseInt(_price.value), farm: _farm.value, energy: parseInt(_energy.value), pic: _pic.value, quantity: 48});
     _name.value = '';
     _price.value= '';
     _farm.value= '';

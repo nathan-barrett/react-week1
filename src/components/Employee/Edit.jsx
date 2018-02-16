@@ -17,23 +17,32 @@ const Edit = (props) => {
         <p>Please select an Product to be Edited</p>
       </div>
       <div style={flexStyle}>
-        {props.inventoryList.map((inventory, i) =>
-          <Inventory
+        {Object.keys(props.inventoryList).map(function(productId) {
+          const inventory = props.inventoryList[productId];
+          return <Inventory
             name={inventory.name}
             price={inventory.price}
             farm={inventory.farm}
             energy={inventory.energy}
             image={inventory.image}
-            button={<span key={i}>Edit</span>}
-            key={i} />
-        )}
+            quantity={inventory.quantity}
+            button={<span onClick={props.onProductSelection} className='button'>Buy</span>}
+            key={productId}
+            currentPath={props.currentPath}
+            productId={productId}
+            onProductSelection={props.onProductSelection}
+          />;
+        })}
+
       </div>
     </div>
   );
 };
 
 Edit.propTypes = {
-  inventoryList: PropTypes.array
+  inventoryList: PropTypes.object,
+  currentPath: PropTypes.string,
+  onProductSelection: PropTypes.func
 };
 
 export default Edit;

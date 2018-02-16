@@ -13,17 +13,21 @@ const InventoryList = (props) => {
   return (
     <div>
       <div style={flexStyle}>
-        {props.inventoryList.map((inventory, i) =>
-          <Inventory
+        {Object.keys(props.inventoryList).map(function(productId) {
+          let inventory = props.inventoryList[productId];
+          return <Inventory
             name={inventory.name}
             price={inventory.price}
             farm={inventory.farm}
             energy={inventory.energy}
             image={inventory.image}
-            button={<span key={i} className='button'>Buy</span>}
-            key={i}
-          />
-        )}
+            quantity={inventory.quantity}
+            button={<span onClick={props.onProductSelection} className='button'>Buy</span>}
+            key={productId}
+            productId={productId}
+            onProductSelection={props.onProductSelection}
+          />;
+        })}
 
       </div>
     </div>
@@ -31,7 +35,8 @@ const InventoryList = (props) => {
 };
 
 InventoryList.propTypes = {
-  inventoryList: PropTypes.array
+  inventoryList: PropTypes.object,
+  onProductSelection: PropTypes.func
 };
 
 
