@@ -1,9 +1,9 @@
 import React from 'react';
 import Inventory from './Inventory/Inventory';
-import INVENTORY from './InventoryData';
+import PropTypes from 'prop-types';
 
 
-const InventoryList = () => {
+const InventoryList = (props) => {
   const flexStyle = {
     display: 'flex',
     justifyContent: 'space-around',
@@ -13,7 +13,7 @@ const InventoryList = () => {
   return (
     <div>
       <div style={flexStyle}>
-        {INVENTORY.map((inventory, i) =>
+        {props.inventoryList.map((inventory, i) =>
           <Inventory
             name={inventory.name}
             price={inventory.price}
@@ -28,6 +28,10 @@ const InventoryList = () => {
       </div>
     </div>
   );
+};
+
+InventoryList.propTypes = {
+  inventoryList: PropTypes.array
 };
 
 

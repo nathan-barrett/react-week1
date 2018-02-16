@@ -1,8 +1,9 @@
 import React from 'react';
-import INVENTORY from '../InventoryData';
 import Inventory from '../Inventory/Inventory';
+import PropTypes from 'prop-types';
 
-const Edit = () => {
+
+const Edit = (props) => {
   const flexStyle = {
     display: 'flex',
     justifyContent: 'space-around',
@@ -16,7 +17,7 @@ const Edit = () => {
         <p>Please select an Product to be Edited</p>
       </div>
       <div style={flexStyle}>
-        {INVENTORY.map((inventory, i) =>
+        {props.inventoryList.map((inventory, i) =>
           <Inventory
             name={inventory.name}
             price={inventory.price}
@@ -29,6 +30,10 @@ const Edit = () => {
       </div>
     </div>
   );
+};
+
+Edit.propTypes = {
+  inventoryList: PropTypes.array
 };
 
 export default Edit;
