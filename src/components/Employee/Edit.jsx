@@ -1,6 +1,6 @@
 import React from 'react';
 import INVENTORY from '../InventoryData';
-import Inventory from '../Inventory';
+import Inventory from '../Inventory/Inventory';
 
 const Edit = () => {
   const flexStyle = {
