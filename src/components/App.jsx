@@ -81,8 +81,9 @@ class App extends React.Component {
     let newMasterList = Object.assign({}, this.state.masterInventoryList, {[newProductId]: newProduct});
     this.setState({masterInventoryList: newMasterList});
   }
-  handleChangingSelectedProduct(productId) {
-    console.log(productId);
+  handleChangingSelectedProduct(product) {
+    this.setState({selectedProduct: product});
+    console.log(this.state.selectedProduct.name);
   }
   render() {
 

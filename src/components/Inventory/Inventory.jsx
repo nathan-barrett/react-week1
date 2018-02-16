@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Inventory(props) {
 
   function onProductClick() {
-    props.onProductSelection(props.productId);
+    props.onProductSelection({name: props.name, price: props.price, farm: props.farm, energy: props.energy, image: props.image, quantity: props.quantity});
   }
 
   // onClick={() => {props.onProductSelection(props.productId);}} className='button'
